@@ -46,5 +46,7 @@ def fp_show_mining_results(patterns, rules):
 
 
 if __name__ == '__main__':
-    patterns, rules = fp_find_association_rules(records_withoutNan, 10, 0.6)
-    fp_show_mining_results(patterns, rules)
+    patterns, rules = fp_find_association_rules(records_withoutNan, (0.01*len(records_withoutNan)), 0.3)
+    print("============================================")
+    print(rules)
+    #fp_show_mining_results(patterns, rules)

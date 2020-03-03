@@ -22,7 +22,7 @@ for i in range(0, len(records)):
     records_withoutNan.append(new)
 
 association_rules = apriori(
-    records_withoutNan, min_support=0.0045, min_confidence=0.2, min_lift=3)
+    records_withoutNan, min_support=0.01, min_confidence=0.3)
 association_results = list(association_rules)
 
 
@@ -36,3 +36,5 @@ for item in association_results:
     print("Support: " + str(item[1]))
     print("Confidence: " + str(item[2][0][2]))
     print("Lift: " + str(item[2][0][3]))
+print("=============================================")
+print("Number association rules: " + str(len(association_results)))
